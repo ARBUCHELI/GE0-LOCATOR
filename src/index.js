@@ -1,17 +1,23 @@
+import ReactDOM from 'react-dom';
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { LongitudeLatitudeDisplay } from './components/LongitudeLatitudeDisplay.js';
+import { HemisphereDisplay } from './components/HemisphereDisplay.js';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+function App() {
+  return (
+    <div>
+      <h1 style={{border: "2px solid #6b5b95", backgroundColor: "transparent", borderRadius: "10px", fontSize: "40px", color:"#deeaee"}}>GEO TRACKER APP</h1>
+      <main>
+        <h1 style={{color: "#bd5734", fontWeight: "bold"}}>Your Coordinates</h1>
+        <LongitudeLatitudeDisplay />
+        <HemisphereDisplay />
+      </main>
+    </div>
+   
+  )
+}
+
+ReactDOM.render(
+  <App />,
+  document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
